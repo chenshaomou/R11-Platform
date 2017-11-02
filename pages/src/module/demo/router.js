@@ -5,8 +5,7 @@ const Index = () => ({component: import(/* webpackChunkName: "demo" */ '@/module
 const HomePage = () => ({component: import(/* webpackChunkName: "demo" */ '@/module/demo/components/HomePage')})
 
 export default [{
-  path: '/',
-  alias: '/demo',
+  path: '/demo',
   component: Index,
   children: [
     {

@@ -6,15 +6,20 @@ import App from './App.vue'
 import router from './global/router'
 import store from './global/store'
 // MuseUI库
-import MuseUI from 'muse-ui'
-import 'muse-ui/dist/muse-ui.css'
-import './assets/css/theme.less'
+// import MuseUI from 'muse-ui'
+// import 'muse-ui/dist/muse-ui.css'
+// import './assets/css/theme.less'
+
+import iView from 'iview'
+import 'iview/dist/styles/iview.css'
+
 // 下面设置可关闭水波纹动画
 // MuseUI.config({
 //   disableTouchRipple: true,
 //   disableFocusRipple: true
 // })
-Vue.use(MuseUI)
+// Vue.use(MuseUI)
+Vue.use(iView)
 
 import 'flex.css'
 import './assets/css/base.less'

@@ -1,17 +1,19 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
-  <div id="app" flex="dir:top">
-    <div flex-box="0">
-      <header-bar></header-bar>
+  <div id="app" flex='dir:left main:left box:first'>
+    <div>
+      <side-bar></side-bar>
     </div>
-    <div :class="['content-view', footerBar.show ? '' : 'no-footer']" flex-box="1" flex="dir:top">
+    <div flex='dir:top'>
+      <div flex-box="0">
+        <header-bar></header-bar>
+      </div>
+      <div flex-box="1">
         <router-view></router-view>
-      <loading></loading>
-      <mu-toast v-if="toast" :message="toast.message"/>
-      <my-dialog></my-dialog>
-    </div>
-    <div flex-box="0">
-      <footer-bar></footer-bar>
+      </div>
+      <div flex-box="0">
+        底部
+      </div>
     </div>
   </div>
 </template>
@@ -20,6 +22,7 @@
   import {mapState} from 'vuex'
   import HeaderBar from './module/common/HeaderBar.vue'
   import FooterBar from './module/common/FooterBar.vue'
+  import SideBar from './module/common/SideBar.vue'
   import Loading from '$bc/Loading'
   import MyDialog from '$bc/MyDialog'
 
@@ -27,9 +30,9 @@
     data() {
       return {}
     },
-    components: { HeaderBar, FooterBar, Loading, MyDialog },
+    components: { SideBar, HeaderBar, FooterBar, Loading, MyDialog },
     computed: {
-      ...mapState(['toast', 'footerBar'])
+      ...mapState(['toast', 'headerBar', 'footerBar'])
     },
     methods: {}
   }
