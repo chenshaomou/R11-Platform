@@ -1,7 +1,7 @@
 <template>
     <div>
     新增一个iOS应用
-        <Form ref="formCustom" :model="formCustom" :rules="ruleCustom" :label-width="80">
+        <Form ref="form" :model="form" :label-width="80">
             <FormItem label="git地址" prop="name">
                 <Input type="text" v-model="form.name"></Input>
             </FormItem>
@@ -18,8 +18,8 @@
                 <Input type="password" v-model="form.gitPasswd"></Input>
             </FormItem>
             <FormItem>
-                <Button type="primary" @click="handleSubmit('formCustom')">提交</Button>
-                <Button type="ghost" @click="handleReset('formCustom')" style="margin-left: 8px">重置</Button>
+                <Button type="primary" @click="handleSubmit('form')">提交</Button>
+                <Button type="ghost" @click="handleReset('form')" style="margin-left: 8px">重置</Button>
             </FormItem>
         </Form>
     </div>
@@ -46,6 +46,7 @@
     },
     methods: {
       handleSubmit() {
+        this.$store.dispatch('addnewApp', this.form)
       },
       handleReset() {
       }

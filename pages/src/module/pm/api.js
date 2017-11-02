@@ -4,8 +4,8 @@
 import conn from '../../global/conn'
 
 export default {
-  searchFlight: data => {
-    return conn.get('', {params: data})
+  addNewApp: data => {
+    return conn.post('/protection/pm/new', {params: data})
     // .then(res => ({res})).catch(err => ({err}))
   }
 }

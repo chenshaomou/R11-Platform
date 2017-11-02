@@ -7,7 +7,7 @@ import store from './store'
 
 // 创建一个axios实例
 const axiosInstance = axios.create({
-  baseURL: 'http://58.63.109.151:8087/mobile.ashx?action=flightinfo-CabinService',
+  baseURL: 'http://localhost:9090',
   headers: {
     'Content-Type': 'application/json'
   },
