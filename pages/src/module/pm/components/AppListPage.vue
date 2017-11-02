@@ -1,7 +1,9 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
   <div>
-    <p @click="testAsync">demo</p>
+    <Button>
+      <router-link :to="{ name: 'newAppPage'}">新增</router-link>
+    </Button>
   </div>
 </template>
 
@@ -20,15 +22,7 @@
       })
     },
     methods: {
-      async testAsync () {
-        const data = await this.$store.dispatch('testAsync')
-        console.log(data)
-      },
-      test () {
-        this.$store.dispatch('searchFlight').then(data => {
-          this.$router.push('/passenger/list')
-        })
-      }
+
     }
   }
 </script>

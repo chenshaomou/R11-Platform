@@ -1,4 +1,4 @@
-package org.rainboweleven.platform.controller;
+package org.rainboweleven.platform;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,6 +1,6 @@
 package org.rainboweleven.platform.filter;
 
-import com.dcair.wxapp.controller.util.TokenApi;
+import org.rainboweleven.platform.controller.util.TokenApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.annotation.Order;
@@ -47,6 +47,10 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
+        //暂时不需要登录就可以访问
+        filterChain.doFilter(httpServletRequest, httpServletResponse);
+        return;
+/*
         //先判断该路径是否需要登录
         String url = httpServletRequest.getServletPath();
         String[] paths = url.split("/");
@@ -82,6 +86,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
             //访问的是根目录 '/'
             httpServletResponse.sendError(404,"页面不存在");
         }
+        */
     }
 
 }

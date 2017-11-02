@@ -25,6 +25,13 @@ public class LoggerFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
+
+        //暂时不需要日志
+        filterChain.doFilter(httpServletRequest, httpServletResponse);
+        return;
+
+        /*
+
         Date begin = new Date();
         HttpServletRequestBodyWrapper requestWrapper = new HttpServletRequestBodyWrapper(httpServletRequest);
         HttpServletBodyResponseWrapper responseWrapper =  new HttpServletBodyResponseWrapper(httpServletResponse);
@@ -32,5 +39,7 @@ public class LoggerFilter extends OncePerRequestFilter {
         RequestLoggerObject rlo = new RequestLoggerObject(requestWrapper,responseWrapper);
         rlo.setTimeStamp(begin);
         logger.info(rlo.toString());
+
+        */
     }
 }

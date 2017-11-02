@@ -1,4 +1,4 @@
-package org.rainboweleven.platform.controller;
+package org.rainboweleven.platform;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -40,17 +40,17 @@ public class Swagger2Config {
                 .apiInfo(apiInfo())
                 .globalOperationParameters(globalOperationParameters)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.dcair.wxapp.controller"))
+                .apis(RequestHandlerSelectors.basePackage("org.rainboweleven.platform.controller"))
                 .paths(PathSelectors.any()).build();
     }
 
     private ApiInfo apiInfo() {
-        ApiInfo apiInfo = new ApiInfo("多彩航空中台api", // 大标题
-                "Spring boot + swagger + mybatis + druid", // 小标题
+        ApiInfo apiInfo = new ApiInfo("移动平台", // 大标题
+                "移动应用管理平台", // 小标题
                 "0.0.1", // 版本
-                "NO terms of service", "chenshaomou@foreveross.com", // 作者
-                "www.dcair.com", // 链接显示文字
-                "http:/www.dcair.com/"// 网站链接
+                "开版本", "chenshaomou@foreveross.com", // 作者
+                "https://github.com/chenshaomou/R11-Platform", // 链接显示文字
+                "https://github.com/chenshaomou/R11-Platform"// 网站链接
         );
 
         return apiInfo;
