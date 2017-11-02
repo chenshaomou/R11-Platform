@@ -8,6 +8,13 @@
     <artifactId>platform</artifactId>
     <version>0.0.1</version>
 
+    <repositories>
+        <repository>
+            <id>jgit-repository</id>
+            <url>https://repo.eclipse.org/content/groups/releases/</url>
+        </repository>
+    </repositories>
+
     <properties>
         <application.properties>${basedir}/src/main/resources/application.properties</application.properties>
         <mysql.connector.java.version>5.1.43</mysql.connector.java.version>
@@ -91,6 +98,12 @@
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>0.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jgit</groupId>
+            <artifactId>org.eclipse.jgit</artifactId>
+            <version>4.9.0.201710071750-r</version>
         </dependency>
 
     </dependencies>
