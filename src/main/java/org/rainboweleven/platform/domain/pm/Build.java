@@ -4,4 +4,6 @@ package org.rainboweleven.platform.domain.pm;
 public class Build {
 
     String no;
+    GitRepository git;//当次发布用到的git
+
 }
